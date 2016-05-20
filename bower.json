@@ -1,10 +1,11 @@
 {
-  "name": "polymer-element-catalog",
-  "version": "1.0.14",
+  "name": "tpa-catalog",
+  "version": "0.0.1",
   "authors": [
-    "Google"
+    "Google",
+    "ING"
   ],
-  "description": "A catalog showcasing Google's Web Components",
+  "description": "A catalog showcasing TPA's Web Components",
   "main": "dist/index.html",
   "license": "http://polymer.github.io/LICENSE.txt",
   "ignore": [
@@ -16,7 +17,7 @@
   ],
   "private": true,
   "dependencies": {
-    "app-elements": "PolymerElements/app-elements#^0.9.0",
+    "tpa-elements": "ING-Group/tpa-elements",
     "iron-elements": "PolymerElements/iron-elements#^1.0.0",
     "paper-elements": "PolymerElements/paper-elements#^1.0.0",
     "gold-elements": "PolymerElements/gold-elements#^1.0.0",

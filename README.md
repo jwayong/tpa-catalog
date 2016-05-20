@@ -1,8 +1,12 @@
-# Polymer Element Catalog
+# TPA Element Catalog
+
+## Note
+
+This is a clone of [Polymer Element Catalog](https://github.com/Polymer/polymer-element-catalog) that has been tweaked to TPA.
 
 ## Getting Started
 
-To work on the Polymer Elements Catalog, clone the repository.
+To work on the TPA Elements Catalog, clone the repository.
 
 To install dependencies:
 

@@ -1,11 +1,11 @@
 {
   "packages": [
     {
-      "name":"app-elements",
-      "title":"App Elements",
+      "name":"tpa-elements",
+      "title":"TPA Elements",
       "color":"#ddc9e6",
-      "symbol":"App",
-      "tagline": "App elements"
+      "symbol":"TPA",
+      "tagline": "Touch Point Architecture elements"
     },
     {
       "name":"iron-elements",
