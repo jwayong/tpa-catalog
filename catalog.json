@@ -3,9 +3,16 @@
     {
       "name":"tpa-elements",
       "title":"TPA Elements",
-      "color":"#ddc9e6",
-      "symbol":"TPA",
+      "color":"#ff6200",
+      "symbol":"Tpa",
       "tagline": "Touch Point Architecture elements"
+    },
+    {
+      "name":"app-elements",
+      "title":"App Elements",
+      "color":"#ddc9e6",
+      "symbol":"App",
+      "tagline": "App elements"
     },
     {
       "name":"iron-elements",

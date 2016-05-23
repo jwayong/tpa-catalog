@@ -18,6 +18,7 @@
   "private": true,
   "dependencies": {
     "tpa-elements": "ING-Group/tpa-elements",
+    "app-elements": "PolymerElements/app-elements#^0.9.0",
     "iron-elements": "PolymerElements/iron-elements#^1.0.0",
     "paper-elements": "PolymerElements/paper-elements#^1.0.0",
     "gold-elements": "PolymerElements/gold-elements#^1.0.0",
