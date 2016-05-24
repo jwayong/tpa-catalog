@@ -1,18 +1,25 @@
 {
   "packages": [
     {
-      "name":"tpa-elements",
-      "title":"TPA Elements",
-      "color":"#ff6200",
-      "symbol":"Tpa",
-      "tagline": "Touch Point Architecture elements"
-    },
-    {
       "name":"tpa-visual-elements",
       "title":"TPA Visual",
       "color":"#ff6200",
       "symbol":"Vi",
       "tagline": "Touch Point Architecture visual elements"
+    },
+    {
+      "name":"tpa-utility-elements",
+      "title":"TPA Utility",
+      "color":"#A8A8A8",
+      "symbol":"Ut",
+      "tagline": "Touch Point Architecture utility elements"
+    },
+    {
+      "name":"tpa-retail-banking-elements",
+      "title":"TPA Retail",
+      "color":"#4C4C94",
+      "symbol":"Rb",
+      "tagline": "Touch Point Architecture retail banking elements"
     },
     {
       "name":"app-elements",
