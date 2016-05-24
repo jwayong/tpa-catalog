@@ -48,7 +48,7 @@ gulp.task('images', function () {
 });
 
 // Copy All Files At The Root Level (app)
-gulp.task('copy', function () {
+gulp.task('copy', ['demo-theme'], function () {
   var app = gulp.src([
     'app/*',
     '!app/test',
@@ -115,6 +115,14 @@ gulp.task('html', function () {
     .pipe($.size({title: 'html'}));
 });
 
+// ING Theme the demo experience
+gulp.task('demo-theme', function() {
+  return gulp.src('bower_components/iron-demo-helpers/demo-pages-shared-styles.html')
+    .pipe($.replace('<link rel="import" href="../paper-styles/shadow.html">', 
+                    '<link rel="import" href="../paper-styles/shadow.html">\n<link rel="import" href="../tpa-styles/app-theme.html">'))
+    .pipe(gulp.dest('bower_components/iron-demo-helpers/'));
+}); 
+
 // Polybuild imports
 gulp.task('polybuild', function () {
   var DEST_DIR = 'dist/elements';
@@ -132,7 +140,7 @@ gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 gulp.task('distclean', ['clean'], del.bind(null, ['bower_components']));
 
 // Watch Files For Changes & Reload
-gulp.task('serve', ['styles', 'elements', 'catalog:dev'], function () {
+gulp.task('serve', ['demo-theme', 'styles', 'elements', 'catalog:dev'], function () {
   var dirs = ['.tmp','app'];
   var mw = [
     function(req, res, next) {
@@ -174,7 +182,7 @@ gulp.task('serve:dist', ['default'], function () {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence(
+  runSequence(    
     ['copy', 'styles'],
     'elements',
     ['jshint', 'images', 'fonts', 'html'],
