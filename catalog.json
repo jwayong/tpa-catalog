@@ -22,6 +22,13 @@
       "tagline": "Touch Point Architecture retail banking elements"
     },
     {
+      "name":"tpa-visual-elements",
+      "title":"TPA Visual",
+      "color":"#ff6200",
+      "symbol":"Vi",
+      "tagline": "Touch Point Architecture visual elements"
+    },
+    {
       "name":"app-elements",
       "title":"App Elements",
       "color":"#ddc9e6",
