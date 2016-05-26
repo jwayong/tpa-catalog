@@ -1,8 +1,10 @@
 # TPA Element Catalog
 
-## Note
-
 This is a clone of [Polymer Element Catalog](https://github.com/Polymer/polymer-element-catalog) that has been tweaked to TPA.
+
+It extends the original catalog with new element groups such as TPA Visuals, Utilities and Retail Banking
+
+The TPA application theme has been applied to the Polymer demo pages
 
 ## Getting Started
 
@@ -26,12 +28,6 @@ To prepare the repo for publication:
     
 Note: Make sure that you're running chrome 42 or later!
     
-### Fixtures
-
-While parts of the system are still in flux, it will be necessary to have stubbed
-data and other bits to be able to work against. Anything in the `fixtures`
-directory will be available when running a development server. By the time
-the catalog ships, the `fixtures` directory should be empty.
 
 ## Managing Catalog Data
 
