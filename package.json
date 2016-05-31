@@ -87,6 +87,9 @@
     "through2-reduce": "^0.3.0",
     "vinyl-fs": "^1.0.0",
     "web-component-tester": "^2.2.3",
-    "writestreamp": "^0.1.0"
+    "writestreamp": "^0.1.0",
+    "drakov": "git+https://github.com/abowen/drakov.git#master",
+    "connect-history-api-fallback": "^1.1.0",
+    "http-proxy-middleware": "^0.15.0"
   }
 }
