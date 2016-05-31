@@ -4,7 +4,7 @@ This is a clone of [Polymer Element Catalog](https://github.com/Polymer/polymer-
 
 It extends the original catalog with new element groups such as TPA Visuals, Utilities and Retail Banking
 
-The TPA application theme has been applied to the Polymer demo pages
+The TPA application theme has been applied to the Polymer demo pages using the following [styling](https://github.com/ING-Group/tpa-styles/blob/master/app-theme.html)
 
 ## Getting Started
 
@@ -17,17 +17,18 @@ To install dependencies:
 To start a local development server:
 
     npm run serve
-    
-To start a local development server with `fixtures` turned on:
 
-    FIXTURES=true npm run serve
-    
 To prepare the repo for publication:
 
     npm run build
     
 Note: Make sure that you're running chrome 42 or later!
-    
+
+### API Mocks
+
+The local development server also includes [Drakov](https://github.com/Aconex/drakov), which is an [API Blueprint](https://apiblueprint.org/) Mock Server.
+
+Any child elements API Blueprint mock files will be hosted using a proxy on the same address.
 
 ## Managing Catalog Data
 
