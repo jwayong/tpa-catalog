@@ -16,11 +16,27 @@ var superstatic = require('superstatic');
 var plumber = require('gulp-plumber');
 var polybuild = require('./polybuild');
 var inlinesource = require('gulp-inline-source');
+var drakov = require('drakov');
+var historyApiFallback = require('connect-history-api-fallback');
+var proxy = require('http-proxy-middleware');
 
 var stream = require('./build/catalog/utils/stream').obj;
 var catalogBuilder = require('./build/catalog');
 
 var CATALOG_FILEPATH = __dirname + '/catalog.json';
+
+function drakovProxy(){
+  var argv = {
+    sourceFiles: 'bower_components/**/*-mock.md',
+    serverPort: 5001,
+    public : true
+  };
+  drakov.run(argv);
+
+  return proxy('/api', {
+    target: 'http://localhost:5001/',
+    logLevel: 'debug'});
+}
 
 // Lint JavaScript
 gulp.task('jshint', function () {
@@ -143,6 +159,8 @@ gulp.task('distclean', ['clean'], del.bind(null, ['bower_components']));
 gulp.task('serve', ['demo-theme', 'styles', 'elements', 'catalog:dev'], function () {
   var dirs = ['.tmp','app'];
   var mw = [
+    drakovProxy(),
+    historyApiFallback(),
     function(req, res, next) {
       if (req.url.indexOf('/bower_components') !== 0) return next();
       req.url = req.url.replace(/^\/bower_components/,'');
@@ -176,7 +194,8 @@ gulp.task('serve:dist', ['default'], function () {
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: 'dist'
+    server: 'dist',
+    middleware: [historyApiFallback(), drakovProxy()]
   });
 });
 
