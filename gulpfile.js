@@ -19,7 +19,7 @@ var inlinesource = require('gulp-inline-source');
 var drakov = require('drakov');
 var historyApiFallback = require('connect-history-api-fallback');
 var proxy = require('http-proxy-middleware');
-
+var lec = require('gulp-line-ending-corrector');
 var stream = require('./build/catalog/utils/stream').obj;
 var catalogBuilder = require('./build/catalog');
 
@@ -247,6 +247,12 @@ function execCatalogTask (options) {
     .pipe(stream.writeFile(destFilepath));
 }
 
+// Fix EOL for Windows users using API Blueprint
+gulp.task('fix-api-eol', function() {
+  return gulp.src('./bower_components/**/*-mock.md')
+    .pipe(lec({verbose:true, eolc: 'LF', encoding:'utf8'}))
+    .pipe(gulp.dest('./bower_components'));
+});
 
 // Load tasks for web-component-tester
 // Adds tasks for `gulp test:local` and `gulp test:remote`
